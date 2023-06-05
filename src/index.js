@@ -54,7 +54,6 @@ function galleryConstructor(e) {
         .join('');
       gallery.insertAdjacentHTML('beforeend', pictures);
       Notiflix.Notify.info(`Hooray! We found ${imagesArray.totalHits} images.`);
-      console.log(imagesArray.totalHits);
       lightbox = new SimpleLightbox('a', {
         captionsData: 'alt',
         captionDelay: 250,

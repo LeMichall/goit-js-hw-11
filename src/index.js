@@ -10,7 +10,7 @@ const loadBtn = document.querySelector('.load-btn');
 axios.defaults.baseURL = 'https://pixabay.com/api/';
 //let lightbox;
 //let page = 1;
-//let q = '';
+let q = '';
 
 async function getUl(userRequest, page) {
   const imagesArray = await axios.get(
@@ -53,6 +53,8 @@ function galleryConstructor(e) {
         )
         .join('');
       gallery.insertAdjacentHTML('beforeend', pictures);
+      Notiflix.Notify.info(`Hooray! We found ${imagesArray.totalHits} images.`);
+      console.log(imagesArray.totalHits);
       lightbox = new SimpleLightbox('a', {
         captionsData: 'alt',
         captionDelay: 250,
